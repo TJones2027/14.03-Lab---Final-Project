@@ -171,3 +171,39 @@ body {
   color: var(--dark-green);
   box-shadow: 0 2px 6px rgba(124, 106, 74, 0.2);
 }
+
+.order-links {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.order-links h2 {
+  font-size: 2rem;
+  color: var(--cool-gray);
+  margin-bottom: 20px;
+}
+
+.order-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+/* Button styling */
+.order-btn {
+  padding: 12px 26px;
+  background: var(--dark-green);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.order-btn:hover {
+  background: var(--cool-gray);
+  transform: translateY(-3px);
+}
