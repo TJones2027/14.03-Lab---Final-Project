@@ -1,8 +1,40 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+header {
+    background: #ff66a3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: #fff0f5;
+    padding: 40px;
+    text-align: center;
+}
+
+.featured {
+    padding: 20px;
+}
+
+.donut-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.donut-card {
+    background: #ffe6f2;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
 }
