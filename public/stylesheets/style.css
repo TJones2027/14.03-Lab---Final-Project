@@ -1,40 +1,173 @@
+/* ================================
+   BRAND VARIABLES
+================================ */
+:root {
+  --dark-green: #10291d;
+  --saffron: #f7c64a;
+  --seasalt: #f7f7f7;
+  --cool-gray: #7c6a4a;
+
+  --font-decorative: 'Italianno', cursive;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+/* ================================
+   GLOBAL
+================================ */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--seasalt);
+  color: var(--cool-gray);
+  font-family: var(--font-main);
+  line-height: 1.6;
 }
 
-header {
-    background: #ff66a3;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-}
-
+/* ================================
+   HERO SECTION
+================================ */
 .hero {
-    background: #fff0f5;
-    padding: 40px;
-    text-align: center;
+  background: var(--dark-green);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-.featured {
-    padding: 20px;
+.hero-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.donut-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.hero h1 {
+  font-family: var(--font-decorative);
+  font-size: 4rem;
+  margin: 0;
+  color: white;
 }
 
-.donut-card {
-    background: #ffe6f2;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 18px;
+.hero p {
+  font-size: 1.2rem;
+  color: var(--seasalt);
+}
+
+/* Button */
+.hero-btn {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border: none;
+  background: var(--saffron);
+  color: var(--dark-green);
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: background 0.25s ease;
+}
+
+.hero-btn:hover {
+  background: var(--cool-gray);
+  color: white;
+}
+
+/* ================================
+   MENU SECTION
+================================ */
+.menu-section {
+  padding: 60px 20px;
+  background: rgba(124, 106, 74, 0.06); /* subtle cool gray tint */
+}
+
+.menu-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--cool-gray);
+  margin-bottom: 30px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Menu Card */
+.menu-card {
+  background: #fff;
+  border: 2px solid var(--cool-gray);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(124, 106, 74, 0.25); /* warm gray shadow */
+  transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.menu-card h3 {
+  margin: 10px 0;
+  color: var(--dark-green);
+}
+
+/* ================================
+   ABOUT SECTION
+================================ */
+.about-section {
+  padding: 60px 20px;
+  background: white;
+  border-bottom: 2px solid var(--cool-gray);
+}
+
+.about-section h2 {
+  text-align: center;
+  color: var(--cool-gray);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* ================================
+   COMMENTS SECTION
+================================ */
+.comments-section {
+  padding: 60px 20px;
+}
+
+.comments-section h2 {
+  color: var(--cool-gray);
+  text-align: center;
+}
+
+#commentForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+#commentInput {
+  padding: 10px;
+  width: 250px;
+  border: 2px solid var(--cool-gray);
+  border-radius: 6px;
+}
+
+#commentList li {
+  background: white;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid var(--cool-gray);
+  border-radius: 6px;
+  color: var(--dark-green);
+  box-shadow: 0 2px 6px rgba(124, 106, 74, 0.2);
 }

@@ -1,9 +1,11 @@
 extends layout
 
 block content
-  // Hero Section
+
+  // Hero Section with centered logo
   section.hero
     .hero-content
+      img.hero-logo(src="/images/logo-cool.png", alt="Downtown Donuts Logo")
       h1 Downtown Donuts
       p Fresh, handmade donuts every morning since 1992.
       button.hero-btn(onclick="scrollToMenu()") View Menu
@@ -14,7 +16,7 @@ block content
     .menu-grid
       each donut in ["Chocolate Glaze", "Maple Bacon", "Salted Caramel", "Strawberry Frosted"]
         .menu-card
-          img(src="/images/donut.png" alt="Donut")
+          img(src="/images/donut.png", alt="Donut")
           h3= donut
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
@@ -24,7 +26,7 @@ block content
     p
       | Downtown Donuts has been serving the community since 1992.
       | All content is placeholder text and will be replaced by the client.
-  
+
   // Comments Section
   section.comments-section
     h2 Leave a Comment
@@ -34,4 +36,3 @@ block content
 
     h3 Recent Comments
     ul#commentList
-
