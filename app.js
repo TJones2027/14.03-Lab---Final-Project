@@ -36,4 +36,17 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.get('/menu', (req, res) => {
+  res.render('menu', { title: 'Menu' });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', { title: 'About Us' });
+});
+
+app.get('/comments', (req, res) => {
+  res.render('comments', { title: 'Comments' });
+});
+
+
 module.exports = app;

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Our Menu
+
+  .menu-grid
+    each donut in ["Chocolate Glaze", "Maple Bacon", "Strawberry Frosted"]
+      .menu-card
+        img(src="/images/donut.png")
+        h3= donut
+        p Lorem ipsum dolor sit amet.
