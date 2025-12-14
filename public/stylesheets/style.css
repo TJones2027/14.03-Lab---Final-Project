@@ -12,11 +12,14 @@
 }
 
 /* ================================
-   GLOBAL
+   GLOBAL STYLES
 ================================ */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  padding: 0;
   background: var(--seasalt);
   color: var(--cool-gray);
   font-family: var(--font-main);
@@ -24,18 +27,56 @@ body {
 }
 
 /* ================================
+   NAV BAR
+================================ */
+.navbar {
+  background: var(--dark-green);
+  padding: 12px 20px;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 45px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--saffron);
+}
+
+/* ================================
    HERO SECTION
 ================================ */
 .hero {
   background: var(--dark-green);
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 100px 20px;
 }
 
 .hero-logo {
   width: 180px;
-  height: auto;
   margin-bottom: 20px;
 }
 
@@ -43,7 +84,6 @@ body {
   font-family: var(--font-decorative);
   font-size: 4rem;
   margin: 0;
-  color: white;
 }
 
 .hero p {
@@ -51,23 +91,61 @@ body {
   color: var(--seasalt);
 }
 
+.hero-cta {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
 /* Button */
 .hero-btn {
   margin-top: 25px;
   padding: 14px 28px;
-  border: none;
   background: var(--saffron);
   color: var(--dark-green);
-  font-size: 18px;
+  border: none;
   border-radius: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
-  font-family: var(--font-main);
   transition: background 0.25s ease;
 }
 
 .hero-btn:hover {
   background: var(--cool-gray);
-  color: white;
+  color: #fff;
+}
+
+/* ================================
+   ORDER LINKS
+================================ */
+.order-links {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.order-links h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.order-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.order-btn {
+  padding: 12px 26px;
+  background: var(--dark-green);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.order-btn:hover {
+  background: var(--cool-gray);
+  transform: translateY(-3px);
 }
 
 /* ================================
@@ -75,13 +153,12 @@ body {
 ================================ */
 .menu-section {
   padding: 60px 20px;
-  background: rgba(124, 106, 74, 0.06); /* subtle cool gray tint */
+  background: rgba(124, 106, 74, 0.06);
 }
 
 .menu-section h2 {
   text-align: center;
   font-size: 2.2rem;
-  color: var(--cool-gray);
   margin-bottom: 30px;
 }
 
@@ -91,14 +168,13 @@ body {
   gap: 25px;
 }
 
-/* Menu Card */
 .menu-card {
   background: #fff;
   border: 2px solid var(--cool-gray);
   padding: 20px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(124, 106, 74, 0.25); /* warm gray shadow */
+  box-shadow: 0 4px 10px rgba(124, 106, 74, 0.25);
   transition: transform 0.2s ease;
 }
 
@@ -109,15 +185,14 @@ body {
 .menu-card img {
   width: 150px;
   height: 150px;
-  object-fit: cover;
-  margin-bottom: 15px;
   border-radius: 50%;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+  object-fit: cover;
 }
 
 .menu-card h3 {
-  margin: 10px 0;
   color: var(--dark-green);
+  margin: 10px 0;
 }
 
 /* ================================
@@ -125,13 +200,12 @@ body {
 ================================ */
 .about-section {
   padding: 60px 20px;
-  background: white;
+  background: #fff;
   border-bottom: 2px solid var(--cool-gray);
 }
 
 .about-section h2 {
   text-align: center;
-  color: var(--cool-gray);
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -141,69 +215,97 @@ body {
 ================================ */
 .comments-section {
   padding: 60px 20px;
+  background: var(--seasalt);
 }
 
-.comments-section h2 {
-  color: var(--cool-gray);
+.comments-container {
+  max-width: 700px;
+  margin: 0 auto;
   text-align: center;
 }
 
-#commentForm {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.comments-container h1 {
+  color: var(--dark-green);
   margin-bottom: 25px;
 }
 
-#commentInput {
-  padding: 10px;
-  width: 250px;
-  border: 2px solid var(--cool-gray);
-  border-radius: 6px;
-}
-
-#commentList li {
-  background: white;
-  padding: 12px;
-  margin-top: 10px;
-  border-left: 4px solid var(--cool-gray);
-  border-radius: 6px;
-  color: var(--dark-green);
-  box-shadow: 0 2px 6px rgba(124, 106, 74, 0.2);
-}
-
-.order-links {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.order-links h2 {
-  font-size: 2rem;
-  color: var(--cool-gray);
-  margin-bottom: 20px;
-}
-
-.order-buttons {
+/* Comment Form */
+.comment-form {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 15px;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-/* Button styling */
-.order-btn {
-  padding: 12px 26px;
-  background: var(--dark-green);
-  color: white;
+.comment-form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid var(--cool-gray);
+}
+
+.comment-form button {
+  padding: 12px 18px;
+  background: var(--saffron);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  opacity: 0.9;
+}
+
+/* Comment List */
+.comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-item {
+  background: #fff;
+  border-left: 6px solid var(--saffron);
+  padding: 16px;
+  margin-bottom: 12px;
   border-radius: 8px;
-  text-decoration: none;
-  font-family: var(--font-main);
-  font-size: 1rem;
-  transition: background 0.25s ease, transform 0.15s ease;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.order-btn:hover {
-  background: var(--cool-gray);
-  transform: translateY(-3px);
+.no-comments {
+  font-style: italic;
+  color: var(--cool-gray);
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 700px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comment-form {
+    flex-direction: column;
+  }
+
+  .comment-form input,
+  .comment-form button {
+    width: 100%;
+  }
 }

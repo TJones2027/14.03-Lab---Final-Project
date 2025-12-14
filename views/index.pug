@@ -2,26 +2,30 @@ extends layout
 
 block content
 
-  // Hero Section with centered logo
+  // =========================
+  // HERO SECTION
+  // =========================
   section.hero
     .hero-content
       img.hero-logo(src="/images/logo-cool.png", alt="Downtown Donuts Logo")
       h1 Downtown Donuts
       p Fresh, handmade donuts every morning since 1992.
-      button.hero-btn(onclick="scrollToMenu()") View Menu
+      p.hero-cta Visit us downtown — open daily at 6am 🍩☕
+      button.hero-btn(onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})") View Menu
 
-        // ===========================
-  // FOOD SERVICE LINKS SECTION
-  // ===========================
+  // =========================
+  // ORDER LINKS
+  // =========================
   section.order-links
     h2 Order Online
-
     .order-buttons
       a.order-btn(href="https://www.ubereats.com", target="_blank") UberEats
       a.order-btn(href="https://www.doordash.com", target="_blank") DoorDash
       a.order-btn(href="https://www.grubhub.com", target="_blank") Grubhub
 
-  // Menu Section
+  // =========================
+  // MENU SECTION
+  // =========================
   section#menu.menu-section
     h2 Our Donuts
     .menu-grid
@@ -31,19 +35,27 @@ block content
           h3= donut
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-  // About Section
+  // =========================
+  // ABOUT SECTION
+  // =========================
   section.about-section
     h2 Our Story
-    p
-      | Downtown Donuts has been serving the community since 1992.
-      | All content is placeholder text and will be replaced by the client.
+    p Downtown Donuts has proudly served the downtown community since 1992.
+    p This content is placeholder text and will be replaced by the client.
 
-  // Comments Section
+  // =========================
+  // COMMENTS SECTION
+  // =========================
   section.comments-section
-    h2 Leave a Comment
-    form#commentForm
-      input(type="text", id="commentInput", placeholder="Write a comment…" required)
+    h2 Customer Comments
+
+    form.comment-form(method="POST", action="/comments")
+      input(type="text", name="comment", placeholder="Write a comment…" required)
       button(type="submit") Post Comment
 
-    h3 Recent Comments
-    ul#commentList
+    ul.comment-list
+      if comments && comments.length
+        each comment in comments
+          li.comment-item= comment
+      else
+        li.comment-item No comments yet — be the first!
